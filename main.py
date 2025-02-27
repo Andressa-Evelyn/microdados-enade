@@ -9,16 +9,14 @@ from scripts.concatenate_dataframe import concatenate_dataframe
 def main():
     setup_folders()
     
-    urls = scraping_url_download()
+    download_hrefs(scraping_url_download())
+    
+    # extrair()
+    
+    # transformed_parquet_files()
 
-    download_hrefs(urls)
+    # reading_parquet()
     
-    extrair()
+    # concatenate_dataframe()
     
-    transformed_parquet_files()
-
-    reading_parquet()
-    
-    concatenate_dataframe()
-    
-    
+main()

@@ -3,7 +3,7 @@ import requests
 
 def download(url):    
     
-    try:
+    try:     
         download_folder = "downloads"        
         filename = os.path.join(download_folder, os.path.basename(url))  
         response = requests.get(url, stream=True, timeout=30) 
@@ -18,7 +18,10 @@ def download(url):
 
     except requests.exceptions.RequestException as e: 
         print(f" Erro ao baixar {url}: {e}")
+        
 
-def download_hrefs(hrefs):
+def download_hrefs(funcao_scrape_hrefs):
+    hrefs = funcao_scrape_hrefs
     for href in hrefs:  
         download(href)
+

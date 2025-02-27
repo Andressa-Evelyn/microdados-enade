@@ -9,3 +9,4 @@ def setup_folders():
     os.makedirs(transformed_parquet_files, exist_ok=True)
     return download_folder, extract_folder, transformed_parquet_files
 
+download_folder, extract_folder, transformed_parquet_files = setup_folders()
