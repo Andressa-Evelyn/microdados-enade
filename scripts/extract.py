@@ -4,6 +4,9 @@ import rarfile
 import py7zr
 import magic
 
+download_folder = "downloads"
+extract_folder = "extracted_files"
+
 
 def file_type(filename):
     tipo = magic.Magic(mime=True).from_file(filename)
@@ -19,7 +22,8 @@ def file_type(filename):
 
 
 def extrair(filename, extract_folder):
-    
+
+
     if not os.path.exists(filename):
         raise FileNotFoundError(f"Arquivo {filename} não encontrado.")
     
@@ -37,3 +41,7 @@ def extrair(filename, extract_folder):
         with py7zr.SevenZipFile(filename, "r") as sevenz_ref:
             sevenz_ref.extractall(extract_folder)
 
+def extraindo_arquivos():
+    for filename in os.listdir(download_folder):
+        file_path = os.path.join(download_folder, filename)
+        extrair(file_path, extract_folder)

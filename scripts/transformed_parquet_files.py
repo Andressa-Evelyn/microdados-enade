@@ -17,6 +17,7 @@ def transformed_parquet_files():
         folder_path = next((folder for folder in possible_folders if os.path.exists(folder)), None)
         if folder_path:
             destination_folder = os.path.join(base_destination, f"microdados_Enade_{year}_LGPD")
+            os.makedirs(destination_folder, exist_ok=True)
             
             for file in os.listdir(folder_path):
                 if file.startswith(f"microdados{year}_arq") and file.endswith(".txt"):

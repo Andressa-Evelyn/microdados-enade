@@ -20,3 +20,5 @@ def concatenate_dataframe():
                     dataframes[sufixo] = df
 
 #  dataframes['arqx'] contém todos os DataFrames concatenados com sufixo 'arqx'
+
+concatenate_dataframe()

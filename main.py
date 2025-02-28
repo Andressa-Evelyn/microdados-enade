@@ -5,18 +5,20 @@ from scripts.extract import extrair
 from scripts.transformed_parquet_files import transformed_parquet_files
 from scripts.reading_parquet import reading_parquet
 from scripts.concatenate_dataframe import concatenate_dataframe
+from scripts.extract import extraindo_arquivos
 
 def main():
+
     setup_folders()
     
     download_hrefs(scraping_url_download())
     
-    # extrair()
-    
-    # transformed_parquet_files()
+    extraindo_arquivos()
 
-    # reading_parquet()
+    transformed_parquet_files()
+
+    reading_parquet()
     
-    # concatenate_dataframe()
+    concatenate_dataframe()
     
 main()
